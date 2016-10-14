@@ -20,3 +20,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+group :test do
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+end
