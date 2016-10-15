@@ -9,11 +9,11 @@ module Services
     end
 
     def perform
-      if number % 3 == 0 && number % 5 != 0
+      if divisible_by_3? && !divisible_by_5?
         :FIZZ
-      elsif number % 3 != 0 && number % 5 == 0
+      elsif !divisible_by_3? && divisible_by_5?
         :BUZZ
-      elsif number % 3 == 0 && number % 5 == 0
+      elsif divisible_by_3? && divisible_by_5?
         :FIZZBUZZ
       else
         number
@@ -23,5 +23,13 @@ module Services
     private
 
     attr_reader :number
+
+    def divisible_by_3?
+      @divisible_by_3 ||= number % 3 == 0
+    end
+
+    def divisible_by_5?
+      @divisible_by_5 ||= number % 5 == 0
+    end
   end
 end
