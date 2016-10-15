@@ -24,12 +24,18 @@ module Services
 
     attr_reader :number
 
-    def divisible_by_3?
-      @divisible_by_3 ||= number % 3 == 0
-    end
+    # def divisible_by_3?
+    #   @divisible_by_3 ||= number % 3 == 0
+    # end
 
-    def divisible_by_5?
-      @divisible_by_5 ||= number % 5 == 0
+    # def divisible_by_5?
+    #   @divisible_by_5 ||= number % 5 == 0
+    # end
+
+    [3, 5].each do |n|
+      define_method "divisible_by_#{n}?" do
+        number % n == 0
+      end
     end
   end
 end
