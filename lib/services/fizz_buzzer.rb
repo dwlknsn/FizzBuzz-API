@@ -1,5 +1,5 @@
 module Services
-  class FizzBuzz
+  class FizzBuzzer
     def self.perform(number, rules)
       new(number, rules).perform
     end
