@@ -57,7 +57,3 @@ describe FizzBuzzesController, type: :controller do
     end
   end
 end
-
-def parsed_response(response)
-  JSON.parse(response.body).with_indifferent_access
-end

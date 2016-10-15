@@ -7,7 +7,6 @@ describe Services::FizzBuzzer do
       fizz_buzzer = double(:fizz_buzzer)
       number = double(:number)
       rules = double(:rules)
-
       allow(subject).to receive(:new).and_return(fizz_buzzer)
       allow(fizz_buzzer).to receive(:perform)
 
